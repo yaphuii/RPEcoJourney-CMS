@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - RPEcoJourney CMS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="RPEcoJourney Logo" class="logo-image">
+                    <div class="logo-text">
+                        <h1>RPEcoJourney</h1>
+                        <p>Content Management System</p>
+                    </div>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="content-producer.html" class="nav-link">Content Producer</a></li>
+                        <li><a href="browse-content.html" class="nav-link">Browse Content</a></li>
+                        <li><a href="settings.html" class="nav-link active">Settings</a></li>
+                    </ul>
+                </nav>
+                <div class="user-profile">
+                    <span class="user-name">Producer</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Title Section -->
+            <section class="page-header">
+                <h2>Settings & Information</h2>
+                <p>Manage system settings and learn about RPEcoJourney CMS</p>
+            </section>
+
+            <!-- Settings Container -->
+            <div class="settings-container">
+                <!-- Settings Sidebar -->
+                <aside class="settings-sidebar">
+                    <nav class="settings-nav">
+                        <button class="settings-nav-btn active" data-panel="system">
+                            <span class="icon">⚙️</span> System Information
+                        </button>
+                        <button class="settings-nav-btn" data-panel="notifications">
+                            <span class="icon">🔔</span> Notifications
+                        </button>
+                        <button class="settings-nav-btn" data-panel="account">
+                            <span class="icon">👤</span> Account Settings
+                        </button>
+                        <button class="settings-nav-btn" data-panel="help">
+                            <span class="icon">❓</span> Help & Support
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Settings Content -->
+                <section class="settings-content">
+                    <!-- System Information Panel -->
+                    <div class="settings-panel active" id="system">
+                        <h3>System Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Platform Name</label>
+                                <p>RPEcoJourney CMS</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Version</label>
+                                <p>1.0.0</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Launch Date</label>
+                                <p>December 2025</p>
+                            </div>
+                            <div class="info-item">
+                                <label>Supported Content Types</label>
+                                <p>Images (PNG, JPG), Videos (MP4, WebM), Documents (PDF, DOCX)</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>Features</h4>
+                            <ul class="feature-list">
+                                <li>✓ Multi-category content organization (Environment, Social, Governance)</li>
+                                <li>✓ Rich media support (images, videos, documents)</li>
+                                <li>✓ Automated email notifications</li>
+                                <li>✓ Content search and filtering</li>
+                                <li>✓ Responsive design for all devices</li>
+                                <li>✓ Eco-friendly interface design</li>
+                            </ul>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>About RPEcoJourney</h4>
+                            <p>RPEcoJourney is a web-based Content Management System designed to promote sustainability awareness through visually compelling multimedia content. Our mission is to educate and inspire users about environmental, social, and governance (ESG) topics through engaging and accessible content.</p>
+                            <p><strong>Vision:</strong> Create a community of informed individuals committed to sustainable practices and positive environmental impact.</p>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Panel -->
+                    <div class="settings-panel" id="notifications">
+                        <h3>Notification Settings</h3>
+                        
+                        <div class="settings-section">
+                            <h4>📧 Email Notification Preferences</h4>
+                            <p>Choose how and when you want to receive updates about platform activities.</p>
+                            
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4>New Content Notifications</h4>
+                                    <p>Receive email alerts immediately when new content is published in any category</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4>Content Updates</h4>
+                                    <p>Get notified when existing content is updated or modified</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4>Weekly Digest</h4>
+                                    <p>Receive a weekly summary of all published content every Sunday at 8:00 AM</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4>System Announcements</h4>
+                                    <p>Be informed about important system updates, maintenance schedules, and new features</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>🎯 Category-Specific Notifications</h4>
+                            <p>Choose which content categories you want to be notified about.</p>
+                            
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4>Environment Content</h4>
+                                    <p>Notifications about climate, renewable energy, and conservation content</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4>Social Content</h4>
+                                    <p>Notifications about community initiatives and social responsibility content</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4>Governance Content</h4>
+                                    <p>Notifications about policies, regulations, and corporate accountability content</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>⏰ Notification Frequency</h4>
+                            <div class="form-group">
+                                <label for="notifFrequency">How often would you like to receive notifications?</label>
+                                <select id="notifFrequency" class="settings-input">
+                                    <option value="immediate">Immediately as they happen</option>
+                                    <option value="daily">Daily digest (one email per day)</option>
+                                    <option value="weekly">Weekly digest (Sundays)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>✉️ Notification Email Address</h4>
+                            <div class="form-group">
+                                <label for="notifEmail">Email address for notifications</label>
+                                <input type="email" id="notifEmail" class="settings-input" value="admin@rpecojuorney.com">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-secondary">Reset to Default</button>
+                            <button class="btn btn-primary">Save Preferences</button>
+                        </div>
+                    </div>
+
+                    <!-- Account Settings Panel -->
+                    <div class="settings-panel" id="account">
+                        <h3>Account Settings</h3>
+                        
+                        <div class="settings-section">
+                            <h4>👤 Profile Information</h4>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" value="Administrator" class="settings-input" readonly>
+                                <small class="form-hint">Your unique login identifier (cannot be changed)</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" value="admin@rpecojuorney.com" class="settings-input">
+                                <small class="form-hint">Used for password recovery and notifications</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" value="Admin User" class="settings-input">
+                                <small class="form-hint">Your display name across the platform</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">User Role</label>
+                                <input type="text" value="Administrator" class="settings-input" readonly>
+                                <small class="form-hint">Your access level and permissions</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="joindate">Member Since</label>
+                                <input type="text" value="December 15, 2025" class="settings-input" readonly>
+                                <small class="form-hint">Date your account was created</small>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>🔒 Change Password</h4>
+                            <p>Update your password regularly to keep your account secure.</p>
+                            <div class="form-group">
+                                <label for="currentpass">Current Password *</label>
+                                <input type="password" id="currentpass" class="settings-input" placeholder="Enter your current password">
+                            </div>
+                            <div class="form-group">
+                                <label for="newpass">New Password *</label>
+                                <input type="password" id="newpass" class="settings-input" placeholder="Enter a new password">
+                                <small class="form-hint">Minimum 8 characters, include uppercase, lowercase, and numbers</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmpass">Confirm New Password *</label>
+                                <input type="password" id="confirmpass" class="settings-input" placeholder="Confirm your new password">
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar" id="strengthBar"></div>
+                                <small id="strengthText">Password strength: Not entered</small>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>🔐 Two-Factor Authentication</h4>
+                            <div class="toggle-item">
+                                <div class="toggle-info">
+                                    <h4>Enable 2FA</h4>
+                                    <p>Add an extra layer of security to your account by requiring a code from your phone</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>🖥️ Active Sessions</h4>
+                            <div class="session-item">
+                                <div class="session-info">
+                                    <h5>Current Session</h5>
+                                    <p>Browser: Chrome | Device: Windows PC | IP: 192.168.1.100</p>
+                                    <small>Last active: Just now</small>
+                                </div>
+                                <span class="session-badge">Active</span>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>⚠️ Danger Zone</h4>
+                            <div class="danger-box">
+                                <h5>Delete Account</h5>
+                                <p>Permanently delete your account and all associated data. This action cannot be undone.</p>
+                                <button class="btn btn-danger">Delete My Account</button>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-secondary">Cancel</button>
+                            <button class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Help & Support Panel -->
+                    <div class="settings-panel" id="help">
+                        <h3>Help & Support</h3>
+                        
+                        <div class="settings-section">
+                            <h4>📖 Getting Started Guide</h4>
+                            
+                            <div class="help-section">
+                                <h5>1️⃣ Creating Content</h5>
+                                <p>Navigate to "Content Producer" to start creating new content. Here's what you need to do:</p>
+                                <ul class="help-list">
+                                    <li>Click the "Add New Content" button</li>
+                                    <li>Fill in the content title with a clear, descriptive heading</li>
+                                    <li>Select a category: Environment (🌿), Social (👥), or Governance (⚖️)</li>
+                                    <li>Write a detailed description of your content</li>
+                                    <li>Upload a featured image, video, and/or document</li>
+                                    <li>Add relevant tags to help users find your content</li>
+                                    <li>Click "Publish Content" to make it live</li>
+                                </ul>
+                            </div>
+
+                            <div class="help-section">
+                                <h5>2️⃣ Publishing Content</h5>
+                                <p>Once you've filled in all required fields and uploaded your media, click "Publish Content" to make your material available to all users. Key points:</p>
+                                <ul class="help-list">
+                                    <li>Published content is immediately visible to all users</li>
+                                    <li>You can save drafts before publishing</li>
+                                    <li>All uploaded files are stored securely</li>
+                                    <li>Published content cannot be edited; create a new version instead</li>
+                                </ul>
+                            </div>
+
+                            <div class="help-section">
+                                <h5>3️⃣ Browsing Content</h5>
+                                <p>Visit the "Browse Content" page to explore all published content on the platform:</p>
+                                <ul class="help-list">
+                                    <li>Use the search bar to find content by keywords</li>
+                                    <li>Filter by category (Environment, Social, Governance)</li>
+                                    <li>Sort by newest, oldest, or title</li>
+                                    <li>Click on any content card to view full details</li>
+                                    <li>Download attached documents and watch videos</li>
+                                </ul>
+                            </div>
+
+                            <div class="help-section">
+                                <h5>4️⃣ Managing Notifications</h5>
+                                <p>Stay updated with important platform activities through our notification system:</p>
+                                <ul class="help-list">
+                                    <li>Go to Settings → Notifications</li>
+                                    <li>Enable/disable notification types (new content, updates, etc.)</li>
+                                    <li>Choose your preferred notification frequency</li>
+                                    <li>Select specific categories you want to follow</li>
+                                    <li>Manage your notification email address</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>❓ Frequently Asked Questions (FAQs)</h4>
+                            
+                            <div class="faq-item">
+                                <h5>What file formats are supported?</h5>
+                                <p><strong>Images:</strong> PNG, JPG, GIF | <strong>Videos:</strong> MP4, WebM | <strong>Documents:</strong> PDF, DOCX, DOC, TXT</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h5>What is the maximum file size for uploads?</h5>
+                                <p><strong>Images:</strong> 10MB | <strong>Videos:</strong> 500MB | <strong>Documents:</strong> 50MB</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h5>How long does it take for published content to appear?</h5>
+                                <p>Content is published immediately after submission. It will be visible in the Browse section and available to all users right away.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h5>Can I edit or delete content after publishing?</h5>
+                                <p>Published content cannot be edited directly. If you need to make changes, you can delete the old content and create a new version with updates.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h5>How do I find my published content?</h5>
+                                <p>Your published content appears in your Content Producer dashboard. You can also find it by browsing the content library using category filters.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h5>What are tags and how should I use them?</h5>
+                                <p>Tags are keywords that help users find your content. Use relevant, descriptive tags separated by commas (e.g., "renewable energy, climate change, solar power").</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h5>How do I change my account password?</h5>
+                                <p>Go to Settings → Account Settings, scroll to "Change Password", enter your current password, create a new password, and click "Save Changes".</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h5>Can I have multiple user accounts?</h5>
+                                <p>Each user is limited to one account. Contact support if you need to manage multiple roles or accounts.</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>💡 Tips for Creating Engaging Content</h4>
+                            <div class="tips-box">
+                                <ul class="tips-list">
+                                    <li><strong>Use Clear Titles:</strong> Make your content title descriptive and compelling</li>
+                                    <li><strong>Add Visual Content:</strong> Include high-quality images and videos to increase engagement</li>
+                                    <li><strong>Be Specific:</strong> Include concrete examples and data to support your sustainability message</li>
+                                    <li><strong>Write Clearly:</strong> Use simple, accessible language for broader audience reach</li>
+                                    <li><strong>Provide Resources:</strong> Attach documents and references for deeper learning</li>
+                                    <li><strong>Use Relevant Tags:</strong> Help users discover your content with descriptive tags</li>
+                                    <li><strong>Focus on Education:</strong> Aim to inform and inspire action on sustainability</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>📞 Contact Support & Resources</h4>
+                            <p>Need additional help? Reach out to our support team through any of these channels:</p>
+                            <div class="support-cards">
+                                <div class="support-card">
+                                    <div class="support-icon">📧</div>
+                                    <h5>Email Support</h5>
+                                    <p>support@rpecojuorney.com</p>
+                                    <small>Response time: 24-48 hours</small>
+                                </div>
+                                <div class="support-card">
+                                    <div class="support-icon">🌐</div>
+                                    <h5>Website</h5>
+                                    <p>www.rpecojuorney.com</p>
+                                    <small>Documentation & resources</small>
+                                </div>
+                                <div class="support-card">
+                                    <div class="support-icon">📱</div>
+                                    <h5>Phone</h5>
+                                    <p>+1 (555) 123-4567</p>
+                                    <small>Monday-Friday, 9AM-5PM EST</small>
+                                </div>
+                                <div class="support-card">
+                                    <div class="support-icon">💬</div>
+                                    <h5>Live Chat</h5>
+                                    <p>Available on website</p>
+                                    <small>Real-time support during business hours</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-section">
+                            <h4>📋 System Documentation</h4>
+                            <p>Access comprehensive guides and documentation:</p>
+                            <ul class="support-list">
+                                <li>📄 <a href="#" class="doc-link">User Manual</a> - Complete guide to using RPEcoJourney CMS</li>
+                                <li>🎥 <a href="#" class="doc-link">Video Tutorials</a> - Step-by-step video guides</li>
+                                <li>🔧 <a href="#" class="doc-link">API Documentation</a> - For developers</li>
+                                <li>📊 <a href="#" class="doc-link">Best Practices</a> - Content creation guidelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 RPEcoJourney CMS. Promoting sustainability through education.</p>
+        </div>
+    </footer>
+
+    <script src="js/settings.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Content - RPEcoJourney CMS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="RPEcoJourney Logo" class="logo-image">
+                    <div class="logo-text">
+                        <h1>RPEcoJourney</h1>
+                        <p>Content Management System</p>
+                    </div>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="content-producer.html" class="nav-link">Content Producer</a></li>
+                        <li><a href="browse-content.html" class="nav-link active">Browse Content</a></li>
+                        <li><a href="settings.html" class="nav-link">Settings</a></li>
+                    </ul>
+                </nav>
+                <div class="user-profile">
+                    <span class="user-name">User</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Title Section -->
+            <section class="page-header">
+                <h2>Browse Content</h2>
+                <p>Discover and learn about sustainability from our collection</p>
+            </section>
+
+            <!-- Filters & Search Bar -->
+            <div class="action-bar">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search content..." class="search-input" id="searchInput">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="filter-options">
+                    <select class="filter-select" id="sortFilter">
+                        <option value="">Sort By</option>
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="title">Title (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="all-content">All Content</button>
+                <button class="tab-btn" data-tab="environment">🌿 Environment</button>
+                <button class="tab-btn" data-tab="social">👥 Social</button>
+                <button class="tab-btn" data-tab="governance">⚖️ Governance</button>
+            </div>
+
+            <!-- Content List Section -->
+            <section class="content-section">
+                <!-- All Content -->
+                <div class="content-list" id="all-content">
+                    <div class="empty-state">
+                        <p>No content available yet. Check back soon!</p>
+                    </div>
+                </div>
+
+                <!-- Environment Content -->
+                <div class="content-list hidden" id="environment">
+                    <div class="empty-state">
+                        <p>No Environment category content available.</p>
+                    </div>
+                </div>
+
+                <!-- Social Content -->
+                <div class="content-list hidden" id="social">
+                    <div class="empty-state">
+                        <p>No Social category content available.</p>
+                    </div>
+                </div>
+
+                <!-- Governance Content -->
+                <div class="content-list hidden" id="governance">
+                    <div class="empty-state">
+                        <p>No Governance category content available.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn" id="prevBtn" disabled>← Previous</button>
+                <span class="pagination-info">Page 1</span>
+                <button class="pagination-btn" id="nextBtn">Next →</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Content Detail Modal -->
+    <div class="modal" id="contentDetailModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="modalTitle">Content Details</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="content-detail">
+                    <div class="detail-image">
+                        <img id="detailImage" src="" alt="Content image">
+                    </div>
+                    <div class="detail-info">
+                        <div class="detail-category" id="detailCategory"></div>
+                        <p id="detailDescription"></p>
+                        <div class="detail-meta">
+                            <span>📅 <span id="detailDate"></span></span>
+                        </div>
+                        <div class="detail-attachments" id="detailAttachments"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 RPEcoJourney CMS. Promoting sustainability through education.</p>
+        </div>
+    </footer>
+
+    <script src="js/browse-content.js"></script>
+</body>
+</html>

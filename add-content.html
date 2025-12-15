@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Content - RPEcoJourney CMS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="RPEcoJourney Logo" class="logo-image">
+                    <div class="logo-text">
+                        <h1>RPEcoJourney</h1>
+                        <p>Content Management System</p>
+                    </div>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="content-producer.html" class="nav-link">Content Producer</a></li>
+                        <li><a href="browse-content.html" class="nav-link">Browse Content</a></li>
+                        <li><a href="settings.html" class="nav-link">Settings</a></li>
+                    </ul>
+                </nav>
+                <div class="user-profile">
+                    <span class="user-name">Producer</span>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Title Section -->
+            <section class="page-header">
+                <h2>Create New Content</h2>
+                <p>Add engaging sustainability content to educate and inspire our community</p>
+            </section>
+
+            <!-- Content Form -->
+            <div class="add-content-wrapper">
+                <form class="content-form-full" id="contentFormFull">
+                    <div class="form-column">
+                        <!-- Title Input -->
+                        <div class="form-group">
+                            <label for="contentTitle">Content Title *</label>
+                            <input type="text" id="contentTitle" placeholder="Enter an engaging title for your content" required>
+                            <small class="form-hint">Make it clear and descriptive</small>
+                        </div>
+
+                        <!-- Category Selection -->
+                        <div class="form-group">
+                            <label for="contentCategory">Category *</label>
+                            <select id="contentCategory" required>
+                                <option value="">Select a category</option>
+                                <option value="environment">🌿 Environment</option>
+                                <option value="social">👥 Social</option>
+                                <option value="governance">⚖️ Governance</option>
+                            </select>
+                            <small class="form-hint">Choose the most relevant category for your content</small>
+                        </div>
+
+                        <!-- Description Input -->
+                        <div class="form-group">
+                            <label for="contentDescription">Description *</label>
+                            <textarea id="contentDescription" placeholder="Write a detailed description of your content. Include key points and what readers will learn." rows="6" required></textarea>
+                            <small class="form-hint">Minimum 50 characters recommended</small>
+                        </div>
+
+                        <!-- Tags Input -->
+                        <div class="form-group">
+                            <label for="contentTags">Tags (Optional)</label>
+                            <input type="text" id="contentTags" placeholder="Add tags separated by commas (e.g., renewable energy, climate change)">
+                            <small class="form-hint">Help users find your content with relevant tags</small>
+                        </div>
+                    </div>
+
+                    <!-- Media Upload Section -->
+                    <div class="form-column">
+                        <h3 class="section-title">📁 Media & Attachments</h3>
+
+                        <!-- Image Upload -->
+                        <div class="form-group">
+                            <label for="contentImage">Featured Image</label>
+                            <div class="file-upload" id="imageUploadArea">
+                                <input type="file" id="contentImage" accept="image/*">
+                                <span class="file-upload-text">Click to upload or drag and drop</span>
+                                <small>PNG, JPG, GIF up to 10MB</small>
+                                <div class="image-preview" id="imagePreview"></div>
+                            </div>
+                        </div>
+
+                        <!-- Video Upload -->
+                        <div class="form-group">
+                            <label for="contentVideo">Video (Optional)</label>
+                            <div class="file-upload" id="videoUploadArea">
+                                <input type="file" id="contentVideo" accept="video/*">
+                                <span class="file-upload-text">Click to upload or drag and drop</span>
+                                <small>MP4, WebM up to 500MB</small>
+                            </div>
+                        </div>
+
+                        <!-- Document Upload -->
+                        <div class="form-group">
+                            <label for="contentDocument">Document (Optional)</label>
+                            <div class="file-upload" id="documentUploadArea">
+                                <input type="file" id="contentDocument" accept=".pdf,.doc,.docx,.txt">
+                                <span class="file-upload-text">Click to upload or drag and drop</span>
+                                <small>PDF, DOCX, DOC, TXT up to 50MB</small>
+                            </div>
+                        </div>
+
+                        <!-- Files Summary -->
+                        <div class="files-summary" id="filesSummary" style="display: none;">
+                            <h4>Uploaded Files</h4>
+                            <ul id="filesList"></ul>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Form Actions -->
+                <div class="form-actions-full">
+                    <a href="content-producer.html" class="btn btn-secondary">
+                        <span>← Cancel</span>
+                    </a>
+                    <button type="button" class="btn btn-secondary" id="saveDraftBtn">
+                        <span>💾 Save Draft</span>
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="previewBtn">
+                        <span>👁️ Preview Content</span>
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="publishBtn" form="contentFormFull">
+                        <span>✓ Publish Content</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Publishing Tips -->
+            <section class="tips-section">
+                <h3>✨ Tips for Great Content</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>📝 Write Clearly</h4>
+                        <p>Use simple, clear language to make your content accessible to all readers</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🖼️ Use Visuals</h4>
+                        <p>Add high-quality images and videos to make your content more engaging</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🎯 Be Specific</h4>
+                        <p>Include concrete examples and data to support your sustainability message</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🔗 Add Resources</h4>
+                        <p>Include documents and references for readers who want to learn more</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Content Preview</h2>
+                <button class="modal-close" type="button">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-container">
+                    <!-- Featured Image Preview -->
+                    <div class="preview-image" id="previewImage">
+                        <div class="image-placeholder">📸 No image selected</div>
+                    </div>
+                    
+                    <!-- Content Details -->
+                    <div class="preview-details">
+                        <!-- Category Badge -->
+                        <div class="preview-category" id="previewCategory">
+                            <span class="category-badge">Category</span>
+                        </div>
+                        
+                        <!-- Title -->
+                        <h2 class="preview-title" id="previewTitle">Content Title</h2>
+                        
+                        <!-- Meta Information -->
+                        <div class="preview-meta">
+                            <span class="meta-item">📅 <span id="previewDate">Today</span></span>
+                            <span class="meta-item">✍️ <span id="previewAuthor">You</span></span>
+                        </div>
+                        
+                        <!-- Description -->
+                        <div class="preview-section">
+                            <h3>Description</h3>
+                            <p class="preview-description" id="previewDescription">Your content description will appear here</p>
+                        </div>
+                        
+                        <!-- Tags -->
+                        <div class="preview-section" id="previewTagsSection" style="display: none;">
+                            <h3>Tags</h3>
+                            <div class="preview-tags" id="previewTags"></div>
+                        </div>
+                        
+                        <!-- Media Status -->
+                        <div class="preview-section">
+                            <h3>📁 Media & Attachments</h3>
+                            <div class="preview-media" id="previewMedia">
+                                <p class="text-gray">No media files selected</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preview Actions -->
+                <div class="form-actions" style="margin-top: 2rem; border-top: 1px solid #E0E0E0; padding-top: 2rem;">
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('previewModal').style.display='none'">
+                        ← Back to Editing
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="publishFromPreviewBtn" form="contentFormFull">
+                        ✓ Publish This Content
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content modal-success">
+            <div class="success-icon">✓</div>
+            <h3>Content Published Successfully!</h3>
+            <p>Your content has been published and is now visible to all users.</p>
+            <div class="form-actions">
+                <a href="content-producer.html" class="btn btn-primary">Back to Dashboard</a>
+                <a href="add-content.html" class="btn btn-secondary">Create Another</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 RPEcoJourney CMS. Promoting sustainability through education.</p>
+        </div>
+    </footer>
+
+    <script src="js/add-content.js"></script>
+</body>
+</html>
