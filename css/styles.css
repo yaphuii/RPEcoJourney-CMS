@@ -830,41 +830,455 @@ body {
 }
 
 @media (max-width: 480px) {
+    :root {
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+    }
+
     .container {
         padding: 0 var(--spacing-sm);
     }
 
+    .header {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .header-content {
+        gap: var(--spacing-sm);
+    }
+
+    .logo {
+        gap: var(--spacing-sm);
+    }
+
+    .logo-image {
+        height: 50px;
+        max-width: 50px;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .logo p {
+        font-size: 0.75rem;
+    }
+
+    .nav-menu ul {
+        gap: var(--spacing-sm);
+        flex-direction: row;
+        font-size: 0.85rem;
+    }
+
+    .nav-link {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+    }
+
+    .user-name {
+        display: none;
+    }
+
+    .logout-btn {
+        padding: var(--spacing-xs);
+        font-size: 0.75rem;
+    }
+
+    .main-content {
+        padding: var(--spacing-md) 0;
+    }
+
+    .page-header {
+        margin-bottom: var(--spacing-lg);
+    }
+
     .page-header h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: var(--spacing-xs);
     }
 
     .page-header p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+    }
+
+    .action-bar {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-input {
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
     }
 
     .btn {
         padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.8rem;
+        gap: var(--spacing-xs);
+    }
+
+    .btn-icon {
+        font-size: 1rem;
+    }
+
+    .tabs {
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-md);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
         font-size: 0.85rem;
+    }
+
+    .content-section {
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
     }
 
     .content-list {
         gap: var(--spacing-md);
+        grid-template-columns: 1fr;
+    }
+
+    .empty-state {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .empty-state p {
+        font-size: 1rem;
+    }
+
+    .content-card-image {
+        height: 150px;
+        font-size: 2rem;
+    }
+
+    .content-card-body {
+        padding: var(--spacing-sm);
+    }
+
+    .content-card-title {
+        font-size: 1rem;
+    }
+
+    .content-card-category {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .content-card-description {
+        font-size: 0.85rem;
+    }
+
+    .content-card-footer button {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs);
+    }
+
+    .modal {
+        padding: var(--spacing-sm);
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: 90vh;
+        border-radius: var(--border-radius);
     }
 
     .modal-header {
         padding: var(--spacing-md);
+        gap: var(--spacing-sm);
     }
 
     .modal-header h3 {
         font-size: 1.2rem;
     }
 
-    .content-form {
-        padding: var(--spacing-md);
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .close-btn {
+        font-size: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .modal-close {
+        font-size: 1.5rem;
+        width: 2rem;
+        height: 2rem;
     }
 
     .form-group {
         margin-bottom: var(--spacing-md);
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea,
+    .form-group select {
+        padding: var(--spacing-sm);
+        font-size: 1rem;
+    }
+
+    .form-group textarea {
+        min-height: 80px;
+    }
+
+    .file-upload {
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+    }
+
+    .file-upload-text {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .image-preview {
+        min-height: 40px;
+    }
+
+    .image-preview img {
+        max-height: 250px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding-top: var(--spacing-md);
+        margin-top: var(--spacing-md);
+    }
+
+    .form-actions button,
+    .form-actions a {
+        width: 100%;
+    }
+
+    .form-actions-full {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+
+    .form-actions-full .btn {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .content-form-full {
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .tips-section {
+        padding: var(--spacing-md);
+    }
+
+    .tips-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .tip-card {
+        padding: var(--spacing-sm);
+    }
+
+    .tip-card h4 {
+        font-size: 0.95rem;
+    }
+
+    .tip-card p {
+        font-size: 0.85rem;
+    }
+
+    .files-summary {
+        padding: var(--spacing-sm);
+    }
+
+    .files-summary h4 {
+        font-size: 0.95rem;
+    }
+
+    .files-summary li {
+        font-size: 0.85rem;
+        padding: var(--spacing-xs) 0;
+    }
+
+    .form-hint {
+        font-size: 0.75rem;
+    }
+
+    /* Preview Modal Mobile */
+    .preview-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .preview-image {
+        height: 200px;
+        font-size: 2rem;
+    }
+
+    .preview-title {
+        font-size: 1.3rem;
+    }
+
+    .preview-meta {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm) 0;
+    }
+
+    .preview-section {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .preview-section h3 {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .preview-description {
+        font-size: 0.9rem;
+    }
+
+    .preview-tags {
+        gap: var(--spacing-xs);
+    }
+
+    .preview-tags .tag {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .preview-media-item {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-xs);
+    }
+
+    .preview-media-item .icon {
+        font-size: 1.2rem;
+    }
+
+    .preview-media-item .name {
+        font-size: 0.85rem;
+    }
+
+    .preview-media-item .size {
+        font-size: 0.75rem;
+    }
+
+    /* Settings Mobile */
+    .settings-container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .settings-sidebar {
+        padding: var(--spacing-md);
+        border-right: none;
+        border-bottom: 2px solid var(--border-gray);
+    }
+
+    .settings-nav {
+        flex-direction: row;
+        gap: var(--spacing-xs);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .settings-nav-btn {
+        padding: var(--spacing-sm);
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .settings-content {
+        padding: var(--spacing-md);
+    }
+
+    .settings-panel h3 {
+        font-size: 1.3rem;
+    }
+
+    .settings-section h4 {
+        font-size: 1rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .toggle-item {
+        padding: var(--spacing-sm);
+    }
+
+    .toggle-info h4 {
+        font-size: 0.9rem;
+    }
+
+    .toggle-info p {
+        font-size: 0.8rem;
+    }
+
+    .session-item {
+        padding: var(--spacing-sm);
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .session-info h5 {
+        font-size: 0.9rem;
+    }
+
+    .session-info p {
+        font-size: 0.8rem;
+    }
+
+    .danger-box {
+        padding: var(--spacing-md);
+    }
+
+    .danger-box h5 {
+        font-size: 1rem;
+    }
+
+    .danger-box p {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        padding: var(--spacing-md) 0;
+    }
+
+    .footer p {
+        font-size: 0.85rem;
     }
 }
 
