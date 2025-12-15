@@ -2,39 +2,75 @@
 // RPEcoJourney CMS - Settings Panel Scripts
 // ==========================================
 
-// Settings Panel Navigation
+// Settings Panel Navigation - Modal Popup
 document.addEventListener('DOMContentLoaded', function() {
     const navButtons = document.querySelectorAll('.settings-nav-btn');
     const panels = document.querySelectorAll('.settings-panel');
-
-    // Initially show the first panel
-    if (panels.length > 0) {
-        panels[0].classList.add('active');
-    }
-    if (navButtons.length > 0) {
-        navButtons[0].classList.add('active');
-    }
 
     // Add click listeners to navigation buttons
     navButtons.forEach(button => {
         button.addEventListener('click', function() {
             const panelId = this.getAttribute('data-panel');
-            
-            // Remove active class from all buttons and panels
-            navButtons.forEach(btn => btn.classList.remove('active'));
-            panels.forEach(panel => panel.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Show the selected panel
             const panel = document.getElementById(panelId);
+            
             if (panel) {
-                panel.classList.add('active');
+                // Create and show modal with the panel content
+                showSettingsModal(panelId, this.textContent);
             }
         });
     });
 });
+
+function showSettingsModal(panelId, title) {
+    const panel = document.getElementById(panelId);
+    if (!panel) return;
+
+    // Create modal structure
+    const modal = document.createElement('div');
+    modal.className = 'modal active settings-modal';
+    
+    const modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+    
+    const modalHeader = document.createElement('div');
+    modalHeader.className = 'modal-header';
+    
+    const headerTitle = document.createElement('h3');
+    headerTitle.textContent = title;
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.addEventListener('click', function() {
+        modal.remove();
+    });
+    
+    modalHeader.appendChild(headerTitle);
+    modalHeader.appendChild(closeBtn);
+    
+    const modalBody = document.createElement('div');
+    modalBody.className = 'modal-body';
+    
+    // Clone the panel content
+    const clonedPanel = panel.cloneNode(true);
+    clonedPanel.classList.remove('settings-panel', 'active');
+    clonedPanel.style.display = 'block';
+    
+    modalBody.appendChild(clonedPanel);
+    
+    modalContent.appendChild(modalHeader);
+    modalContent.appendChild(modalBody);
+    modal.appendChild(modalContent);
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+    
+    document.body.appendChild(modal);
+}
 
 // Password Strength Indicator
 const passwordInput = document.getElementById('newPassword');
